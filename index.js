@@ -1,3 +1,3 @@
 var getClassNames = require('./lib/get-classlist');
 
-module.exports = getClassNames;
+exports.getClassNames = getClassNames;
