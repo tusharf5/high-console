@@ -10,7 +10,7 @@ Features:
 * Supports array of strings.
 * Zero-dependency.
 
-## Quickstart - CommonJS (Recommended)
+## Quickstart - CommonJS
 
 ```shell
 npm install dynamic-class-list
@@ -20,7 +20,14 @@ Then require it in your module ...
 
 
 ```javascript
-const getClassnames = require('dynamic-class-list');
+const getClassNames = require('dynamic-class-list').getClassNames;
+```
+
+## OR using ES6 imports
+
+
+```javascript
+import { getClassNames } from 'dynamic-class-list';
 ```
 
 ## API
@@ -28,10 +35,9 @@ const getClassnames = require('dynamic-class-list');
 ### Arguments as strings
 
 ```javascript
-const getClassnames = require('dynamic-class-list');
 
 // As Arguments
-getClassnames('class1', 'class2');
+getClassNames('class1', 'class2');
 
 // Output : "class1 class2"
 ```
@@ -40,32 +46,31 @@ getClassnames('class1', 'class2');
 
 
 ```javascript
-const getClassnames = require('dynamic-class-list');
 
 // As an Array
-getClassnames(['class1', 'class2']);
+getClassNames(['class1', 'class2']);
 
 // Output : "class1 class2"
 ```
 
 ### Arguments as an object
 
-`Note that the key is used as the class if the value is truthy*`\
+`Note that the key is used as the class if its value is truthy`
 
 ```javascript
-const getClassnames = require('dynamic-class-list');
 
 // As an Object
-getClassnames({class1: true, class2 : false});
+getClassNames({class1: true, class2 : false});
 
 // Output : "class1"
 ```
 
-```javascript
-const getClassnames = require('dynamic-class-list');
+`Note that the function should return a boolean`
 
-// As an Object
-getClassnames({ 
+```javascript
+
+// Value as a function As an Object
+getClassNames({ 
     class1: function() { return false; },
     class2 : function() { return true; }
 });
@@ -76,10 +81,9 @@ getClassnames({
 ### Hybrid Arguments
 
 ```javascript
-const getClassnames = require('dynamic-class-list');
 
-// As Everything
-getClassnames('class1', 'class2', ['class3', 'class4'], { 
+// using all type of data
+getClassNames('class1', 'class2', ['class3', 'class4'], { 
     class5 : function() { return false; },
     class6 : function() { return true; }
 });
