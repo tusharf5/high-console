@@ -1,5 +1,5 @@
 {
-  "name": "dyanamic-class-list",
+  "name": "dynamic-class-list",
   "version": "1.0.0",
   "description": "A helper function to print strings of dynamic and optional classes",
   "main": "index.js",
