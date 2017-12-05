@@ -6,7 +6,8 @@ Simple, fast module for extracting strings of dynamic and optional class list.
 Features:
 
 * Support for string arguments.
-* Support Object syntax.
+* Supports Object syntax.
+* Supports Function.
 * Supports array of strings.
 * Zero-dependency.
 
@@ -20,7 +21,7 @@ Then require it in your module ...
 
 
 ```javascript
-const getClassNames = require('dynamic-class-list').getClassNames;
+var getClassNames = require('dynamic-class-list').getClassNames;
 ```
 
 ## OR using ES6 imports
