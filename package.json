@@ -1,7 +1,7 @@
 {
   "name": "dynamic-class-list",
   "version": "1.0.5",
-  "description": "A helper function to print,extract,get strings of dynamic and optional classes",
+  "description": "A helper function to print,extract,get strings of dynamic and conditional classes",
   "main": "index.js",
   "scripts": {
     "build": "babel src --presets babel-preset-es2015 --out-dir lib"
@@ -14,7 +14,10 @@
     "class",
     "dynamic",
     "optional",
+    "conditional",
+    "style",
     "jsx",
+    "react",
     "print"
   ],
   "author": "Tushar Sharma",
