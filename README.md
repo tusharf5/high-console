@@ -92,5 +92,12 @@ getClassNames('class1', 'class2', ['class3', 'class4'], {
 // Output : "class1 class2 class3 class4 class6"
 ```
 
+
+## What's new in v1.0.7
+
+- Not throwing error on invalid arguments
+- Handles undefined and null gracefully
+- Support for numbers
+
 ----
 Markdown generated from [README_js.md](README_js.md) by [![RunMD Logo](http://i.imgur.com/h0FVyzU.png)](https://github.com/broofa/runmd)

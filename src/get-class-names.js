@@ -8,7 +8,9 @@ function getClassNames() {
 
   function handleObject(obj) {
     Object.keys(obj).forEach(key => {
-      if (typeof obj[key] === 'function') {
+      if (handleBadValues(obj[key])) {
+        //
+      } else if (typeof obj[key] === 'function') {
         handleFunction(obj[key], key);
       } else if (typeof obj[key] === 'boolean') {
         if (obj[key]) {
@@ -17,9 +19,9 @@ function getClassNames() {
       } else if (typeof obj[key] === 'string') {
         handleString(key);
       } else {
-        throw new Error(
-          'Value of an object property can only have a function, boolean or a string'
-        );
+        // throw new Error(
+        //   'Value of an object property can only have a function, boolean or a string'
+        // );
       }
     });
   }
@@ -32,29 +34,44 @@ function getClassNames() {
     if (typeof fn() === 'boolean') {
       classes.push(key);
     } else {
-      throw new Error('Function Should Return a Bool Value');
+      // throw new Error('Function Should Return a Bool Value');
     }
   }
 
   function handleArray(obj) {
     obj.forEach(e => {
-      if (typeof e === 'string') {
+      if (handleBadValues(obj)) {
+        //
+      } else if (typeof e === 'string') {
+        classes.push(e);
+      } else if (typeof e === 'number') {
         classes.push(e);
       } else {
-        throw new Error('Arrays can only have strings');
+        // throw new Error('Arrays can only have strings or numbers');
       }
     });
   }
 
+  function handleBadValues(obj) {
+    if (obj === null || typeof obj === undefined || obj === undefined) {
+      return true;
+    }
+    return false;
+  }
+
   function goThroughIt(obj) {
-    if (typeof obj === 'string') {
+    if (handleBadValues(obj)) {
+      //
+    } else if (typeof obj === 'number') {
+      classes.push(obj);
+    } else if (typeof obj === 'string') {
       handleString(obj);
     } else if (Array.isArray(obj)) {
       handleArray(obj);
     } else if (typeof obj === 'object') {
       handleObject(obj);
     } else {
-      throw new Error('Invalid Class Type');
+      //throw new Error('Invalid Class Type');
     }
   }
 
