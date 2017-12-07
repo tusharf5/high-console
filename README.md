@@ -6,8 +6,10 @@ Simple, fast module for extracting strings of dynamic and optional class list.
 Features:
 
 * Support for string arguments.
+* Support for number arguments.
 * Supports Object syntax.
 * Supports Function.
+* Ignore bad values like null and undefined.
 * Supports array of strings.
 * Zero-dependency.
 
