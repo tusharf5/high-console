@@ -5,12 +5,12 @@ Simple, fast module for extracting strings of dynamic and optional class list.
 
 Features:
 
-* Support for string arguments.
-* Support for number arguments.
-* Supports Object syntax.
-* Supports Function.
+* Support string arguments.
+* Support number arguments.
+* Support object arguments.
+* Support array arguments.
+* Support functions.
 * Ignore bad values like null and undefined.
-* Supports array of strings.
 * Zero-dependency.
 
 ## Quickstart - CommonJS
