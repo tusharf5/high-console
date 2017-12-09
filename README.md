@@ -1,7 +1,7 @@
 
 # dynamic-class-list
 
-Simple, fast module for extracting strings of dynamic and optional class list.
+Simple, fast module for getting strings of dynamic and conditional class list.
 
 Features:
 
@@ -17,6 +17,12 @@ Features:
 
 ```shell
 npm install dynamic-class-list
+```
+
+### Or using yarn
+
+```shell
+yarn add dynamic-class-list
 ```
 
 Then require it in your module ...
@@ -54,6 +60,10 @@ getClassNames('class1', 'class2');
 getClassNames(['class1', 'class2']);
 
 // Output : "class1 class2"
+
+getClassNames([null, undefined, 3, 'class1', 'class2']);
+
+// Output : "3 class1 class2"
 ```
 
 ### Arguments as an object
@@ -66,6 +76,10 @@ getClassNames(['class1', 'class2']);
 getClassNames({class1: true, class2 : false});
 
 // Output : "class1"
+
+getClassNames({class1: undefined, class2 : null, class3: true, class4: false});
+
+// Output : "class3"
 ```
 
 `Note that the function should return a boolean`
@@ -86,20 +100,19 @@ getClassNames({
 ```javascript
 
 // using all type of data
-getClassNames('class1', 'class2', ['class3', 'class4'], { 
+getClassNames('class1', 'class2', 2, null, undefined, ['class3', null, undefined, 4, 'class4'], { 
     class5 : function() { return false; },
-    class6 : function() { return true; }
+    class6 : function() { return true; },
+    class7: undefined,
+    class8: true,
+    class9: false
 });
 
-// Output : "class1 class2 class3 class4 class6"
+// Output : "class1 class2 2 class3 4 class4 class6 class8"
 ```
 
 
-## What's new in v1.0.7
+## What's new in v1.0.8
 
-- Not throwing error on invalid arguments
-- Handles undefined and null gracefully
-- Support for numbers
-
-----
-Markdown generated from [README_js.md](README_js.md) by [![RunMD Logo](http://i.imgur.com/h0FVyzU.png)](https://github.com/broofa/runmd)
+- Unexpected Result when evaluating class through function.
+- Smaller Size 2.5Kb to 1.2Kb

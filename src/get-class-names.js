@@ -31,8 +31,14 @@ function getClassNames() {
   }
 
   function handleFunction(fn, key) {
-    if (typeof fn() === 'boolean') {
-      classes.push(key);
+    let result = false;
+    try {
+      result = fn();
+    } catch (e) {}
+    if (typeof result === 'boolean') {
+      if (result) {
+        classes.push(key);
+      }
     } else {
       // throw new Error('Function Should Return a Bool Value');
     }
