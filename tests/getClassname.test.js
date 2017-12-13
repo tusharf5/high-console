@@ -17,7 +17,7 @@ test('Print Object', () => {
 });
 
 test('Print Functions', () => {
-  expect(getClassnames({ abc: () => false, cde: () => true })).toBe('cde');
+  expect(getClassnames({ abc: () => false, cde: () => true })).toBe('ce');
 });
 
 test('Print Bad Values', () => {
