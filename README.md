@@ -44,10 +44,12 @@ import { debug, error, HighConsole } from 'high-console';
 
 ```javascript
 
+import { debug, error, success, warn } from 'high-console';
+
 debug('Message to Debug', {userId: '1234Abdsksk'});
-error('Message to Debug', {userId: '1234Abdsksk'});
-success('Message to Debug', {userId: '1234Abdsksk'});
-warn('Message to Debug', {userId: '1234Abdsksk'});
+error('Error Message', {userId: '1234Abdsksk'});
+success('Success Message', {userId: '1234Abdsksk'});
+warn('Warn Message', {userId: '1234Abdsksk'});
 ```
 ### Disabled on production
 
@@ -63,8 +65,10 @@ new HighConsole({ enabled: process.env.NODE_ENV !== 'production' });
 
 ### Global Config
 
-```
+```javascript
+
 upperCase: true, // uppercase the message to the logger
 enableLabel: true, // Enable the labels (⚠, ✔)
 enabled: true // enable logging to the console
+
 ```
