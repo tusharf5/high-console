@@ -1,118 +1,70 @@
 
-# dynamic-class-list
+# high-console
 
-Simple, fast module for getting strings of dynamic and conditional class list.
+Configurable browser logger, high-console can be used for logging purposes, status reporting. It supports colored messages out of the box.
 
 Features:
 
-* Support string arguments.
-* Support number arguments.
-* Support object arguments.
-* Support array arguments.
-* Support functions.
-* Ignore bad values like null and undefined.
-* Zero-dependency.
+* Support condintional logging based on the environment.
+* All styles are configurable. [TODO]
+* Supports colored console statements.
+* Comes with common utils like debug, error, warn, success out of the box.
 
-## Quickstart - CommonJS
+![High Console]('./images/screenshot')
+
+## Quickstart - npm
 
 ```shell
-npm install dynamic-class-list
+npm install high-console
 ```
 
 ### Or using yarn
 
 ```shell
-yarn add dynamic-class-list
+yarn add high-console
 ```
 
 Then require it in your module ...
 
 
 ```javascript
-var getClassNames = require('dynamic-class-list').getClassNames;
+var debug = require('high-console').debug;
 ```
 
 ## OR using ES6 imports
 
 
 ```javascript
-import { getClassNames } from 'dynamic-class-list';
+import { debug, error, HighConsole } from 'high-console';
 ```
 
 ## API
 
-### Arguments as strings
+### debugging
 
 ```javascript
 
-// As Arguments
-getClassNames('class1', 'class2');
+debug('Message to Debug', {userId: '1234Abdsksk'});
+error('Message to Debug', {userId: '1234Abdsksk'});
+success('Message to Debug', {userId: '1234Abdsksk'});
+warn('Message to Debug', {userId: '1234Abdsksk'});
+```
+### Disabled on production
 
-// Output : "class1 class2"
+```javascript 
+
+// project entry file
+
+import { HighConsole } from 'high-console';
+
+new HighConsole({ enabled: process.env.NODE_ENV !== 'production' });
+
 ```
 
-### Arguments as an array of strings
+### Global Config
 
-
-```javascript
-
-// As an Array
-getClassNames(['class1', 'class2']);
-
-// Output : "class1 class2"
-
-getClassNames([null, undefined, 3, 'class1', 'class2']);
-
-// Output : "3 class1 class2"
 ```
-
-### Arguments as an object
-
-`Note that the key is used as the class if its value is truthy`
-
-```javascript
-
-// As an Object
-getClassNames({class1: true, class2 : false});
-
-// Output : "class1"
-
-getClassNames({class1: undefined, class2 : null, class3: true, class4: false});
-
-// Output : "class3"
+upperCase: true, // uppercase the message to the logger
+enableLabel: true, // Enable the labels (⚠, ✔)
+enabled: true // enable logging to the console
 ```
-
-`Note that the function should return a boolean`
-
-```javascript
-
-// Value as a function As an Object
-getClassNames({ 
-    class1: function() { return false; },
-    class2 : function() { return true; }
-});
-
-// Output : "class2"
-```
-
-### Hybrid Arguments
-
-```javascript
-
-// using all type of data
-getClassNames('class1', 'class2', 2, null, undefined, ['class3', null, undefined, 4, 'class4'], { 
-    class5 : function() { return false; },
-    class6 : function() { return true; },
-    class7: undefined,
-    class8: true,
-    class9: false
-});
-
-// Output : "class1 class2 2 class3 4 class4 class6 class8"
-```
-
-
-## What's new in v1.0.8
-
-- Unexpected Result when evaluating class through function.
-- Smaller Size 2.5Kb to 1.2Kb

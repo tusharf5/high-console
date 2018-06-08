@@ -1,7 +1,7 @@
 {
-  "name": "dynamic-class-list",
-  "version": "1.0.8",
-  "description": "A helper module to get a joined string of dynamic and conditional classes",
+  "name": "high-console",
+  "version": "0.1.0",
+  "description": "Configurable browser logger, high-console can be used for logging purposes, status reporting. It supports colored messages out of the box.",
   "main": "index.js",
   "scripts": {
     "build": "babel src --presets babel-preset-es2015 --out-dir lib --minified --no-comments",
@@ -9,24 +9,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tusharf5/dynamic-class-list"
+    "url": "git+https://github.com/tusharf5/high-console"
   },
   "keywords": [
-    "class",
-    "dynamic",
-    "optional",
-    "conditional",
+    "console",
+    "log",
+    "logger",
+    "debug",
+    "color",
     "style",
-    "jsx",
-    "react",
-    "print"
+    "fancy",
+    "browser",
+    "web"
   ],
   "author": "Tushar Sharma",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tusharf5/dynamic-class-list/issues"
+    "url": "https://github.com/tusharf5/high-console/issues"
   },
-  "homepage": "https://github.com/tusharf5/dynamic-class-list#readme",
+  "homepage": "https://github.com/tusharf5/high-console#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
