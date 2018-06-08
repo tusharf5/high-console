@@ -10,7 +10,7 @@ Features:
 * Supports colored console statements.
 * Comes with common utils like debug, error, warn, success out of the box.
 
-![High Console]('./images/screenshot')
+![High Console]('images/screenshot.png')
 
 ## Quickstart - npm
 
