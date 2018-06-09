@@ -1,8 +1,8 @@
-var HighConsole = require('./lib/high-console').HighConsole;
-var debug = require('./lib/high-console').debug;
-var warn = require('./lib/high-console').warn;
-var success = require('./lib/high-console').success;
-var error = require('./lib/high-console').error;
+var HighConsole = require('./lib/core').HighConsole;
+var debug = require('./lib/core').debug;
+var warn = require('./lib/core').warn;
+var success = require('./lib/core').success;
+var error = require('./lib/core').error;
 
 module.exports = {
   HighConsole: HighConsole,
