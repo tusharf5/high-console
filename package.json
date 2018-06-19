@@ -1,6 +1,6 @@
 {
   "name": "high-console",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Configurable browser logger, high-console can be used for logging purposes, status reporting. It supports colored messages out of the box.",
   "main": "index.js",
   "scripts": {
