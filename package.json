@@ -20,6 +20,8 @@
     "style",
     "fancy",
     "browser",
+    "node",
+    "express",
     "web"
   ],
   "author": "Tushar Sharma",
