@@ -16,7 +16,7 @@ Platform:
 npm manifest: 
   {
     "name": "high-console",
-    "version": "0.1.0",
+    "version": "0.4.1",
     "description": "Configurable browser logger, high-console can be used for logging purposes, status reporting. It supports colored messages out of the box.",
     "main": "index.js",
     "scripts": {
@@ -28,14 +28,17 @@ npm manifest:
       "url": "git+https://github.com/tusharf5/high-console"
     },
     "keywords": [
-      "class",
-      "dynamic",
-      "optional",
-      "conditional",
+      "console",
+      "log",
+      "logger",
+      "debug",
+      "color",
       "style",
-      "jsx",
-      "react",
-      "print"
+      "fancy",
+      "browser",
+      "node",
+      "express",
+      "web"
     ],
     "author": "Tushar Sharma",
     "license": "MIT",

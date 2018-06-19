@@ -70,7 +70,7 @@ const browserTheme = {
 const nodeTheme = {
   dayDev: {
     debug: {
-      color: "\033[30m",
+      color: "\x1b[30m",
       backgroundColor: "#fff",
       textTransform: () => (configObject.upperCase ? "uppercase" : "none")
     },
@@ -80,12 +80,12 @@ const nodeTheme = {
       textTransform: () => (configObject.upperCase ? "uppercase" : "none")
     },
     error: {
-      color: "\033[31m",
+      color: "\x1b[31m",
       backgroundColor: "#fff",
       textTransform: () => (configObject.upperCase ? "uppercase" : "none")
     },
     success: {
-      color: "\033[32m",
+      color: "\x1b[32m",
       backgroundColor: "#fff",
       textTransform: () => (configObject.upperCase ? "uppercase" : "none")
     }
@@ -131,7 +131,7 @@ function printNodeMessage(type, message, data) {
     console.log(
       `${nodeTheme[configObject.mode][type].color} %s`,
       `${symbols[configObject.mode][type]} ${message}`,
-      "\033[0m",
+      "\x1b[0m",
       data
     );
 }
