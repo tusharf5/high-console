@@ -1,7 +1,9 @@
 
 # high-console
 
-Configurable browser logger, high-console can be used for logging purposes, status reporting. It supports colored messages out of the box.
+🎉🎉🎉🎉 Use same logger for both Browser and Node with zero config out of the box 🎉🎉🎉🎉
+
+Configurable browser and node logger with same API, high-console can be used for logging purposes in a pleasant way and status reporting. It supports colored messages out of the box.
 
 Features:
 
@@ -67,8 +69,11 @@ new HighConsole({ enabled: process.env.NODE_ENV !== 'production' });
 
 ```javascript
 
-upperCase: true, // uppercase the message to the logger
-enableLabel: true, // Enable the labels (⚠, ✔)
-enabled: true // enable logging to the console
+config = { 
+  upperCase: true, // uppercase the message to the logger
+  enableLabel: true, // Enable the labels (⚠, ✔)
+  enabled: true // enable logging to the console
+}
 
+new HighConsole(config);
 ```
