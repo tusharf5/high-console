@@ -8,13 +8,14 @@ Configurable browser and node logger with same API, high-console can be used for
 Features:
 
 * Support condintional logging based on the environment.
-* All styles are configurable. [TODO]
+* Zero Dependency
 * Supports colored console statements.
 * Comes with common utils like debug, error, warn, success out of the box.
+* All styles are configurable. [TODO]
 
 ![High Console](images/screenshot.png)
 
-## Quickstart - npm
+### Quickstart - npm
 
 ```shell
 npm install high-console
